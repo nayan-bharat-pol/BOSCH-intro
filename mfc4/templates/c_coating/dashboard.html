@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dashboard-card {
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: scale(1.03);
+        }
+
+        #noResults {
+            display: none;
+            font-size: 1.1rem;
+            color: #6c757d;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Push footer to bottom */
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body style="background-color:#F3F7F8">
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold mx-auto" href="#">C-Coating Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center d-flex align-items-center justify-content-center"
+        style='background: url("{% static "bosch_intro/images/dash.jpeg" %}") center/cover no-repeat; height: 300px;'>
+
+        <div class="text-white bg-dark bg-opacity-50 p-3 rounded">
+            <h3 class="display-6 fw-bold">NaP C-Coating Dashboards</h3>
+            <p class="lead">A Web Page To Explore and Visualize Data From Various types of machines.</p>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4 fw-bold">Dashboard Overview</h2>
+
+        <!-- 🔍 Search bar -->
+        <div class="d-flex justify-content-center mb-4">
+            <input id="searchInput" type="text" class="form-control w-50" placeholder="Search dashboard...">
+        </div>
+
+        <!-- “No Results” message -->
+        <div id="noResults">No dashboards found matching your search.</div>
+
+        <!-- Grid -->
+        <div class="row g-4" id="dashboardGrid">
+            <!-- Card 1 -->
+            <div class="col-md-4 d-flex justify-content- dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/c_dashboard.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">C-Coating dashboard</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/42d044eb-eca7-4fe0-80ae-3d3208cff1af/ReportSectionc9867901015b611172b9?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard2.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">C-Coating SQCD</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/d35fb46b-296c-4e59-b1da-c492c3c3a756/92943a3108cea99eaae5?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 3-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard3.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">C-Coating digital SQCD</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/cae5f6b2-5ec7-409d-ba8d-250828d1c70a/ReportSection4a3d9628d1a077e1363d?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 4-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/durr.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Durr_75C</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/6837a66d-e287-4b51-b5b2-42daf05b93f4?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Add more cards below as needed -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p class="mb-0">© 2025 My Dashboard. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <!-- ✅ Search script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("searchInput");
+            const cards = document.querySelectorAll(".dashboard-card");
+            const noResults = document.getElementById("noResults");
+
+            searchInput.addEventListener("input", function () {
+                const filter = searchInput.value.toLowerCase().trim();
+                let anyVisible = false;
+
+                cards.forEach(card => {
+                    const title = card.querySelector(".card-title").textContent.toLowerCase();
+                    if (title.includes(filter)) {
+                        card.classList.remove("d-none");
+                        anyVisible = true;
+                    } else {
+                        card.classList.add("d-none");
+                    }
+                });
+
+                // Show/hide “No results” message
+                if (filter && !anyVisible) {
+                    noResults.style.display = "block";
+                } else {
+                    noResults.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

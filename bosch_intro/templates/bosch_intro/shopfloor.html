@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopfloor</title>
+
+    <style>
+    .big-image {
+    width: 100%;   /* makes image full width of its container */
+    max-width: 1500px; /* optional: limits maximum size */
+    height: auto;  /* keeps aspect ratio */
+    display: block;
+    margin: 0 auto; /* centers image */
+}
+
+
+   .description {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 50px 30px;
+  text-align: center;
+  position: relative;
+
+  /* add a map-like image */
+  background: url("{% static 'bosch_intro/images/map1.png' %}") no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.description::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+
+  /* make the image very light like a watermark */
+  background: rgba(255, 255, 255, 0.75);  
+  z-index: 0;
+}
+
+.description h2,
+.description p {
+  position: relative;
+  z-index: 1; /* text stays above overlay */
+  color: #222;
+}
+
+.description h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #555;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.description p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 18p
+}
+
+.big-image {
+  height: 70vh;        /* covers 70% of screen height */
+  width: auto;         /* keeps aspect ratio */
+  display: block;      /* allows centering */
+  margin: 30px auto;   /* space + center */
+  border-radius: 15px; /* smooth rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+/* Hover effect */
+.big-image:hover {
+  transform: scale(1.03); /* slight zoom */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+  </style>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black px-3 sticky-top">
+  <!-- Gradient Strip on Top -->
+  <img src="{% static 'bosch_intro/images/line 2.jpg' %}" 
+       alt="Strip Line" 
+       class="position-absolute start-0 w-100" 
+       style="top: 0; height: 10px; z-index: 10;">
+ 
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    
+    <!-- Left Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#" style="z-index: 20;">
+      <img src="{% static 'bosch_intro/images/bosch.png' %}" alt="Bosch Logo" height="40" class="me-2">
+    </a>
+
+    <!-- Center Heading -->
+    <span class="navbar-text fw-bold text-white fs-4 position-absolute start-50 translate-middle-x" style="z-index: 20;">
+      Welcome to Shopfloor
+    </span>
+
+    <!-- Right Side Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="z-index: 20;">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="/mfc/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'shopfloor' %}">Shopfloor</a></li>
+        <li class="nav-item"><a class="nav-link" href="/mfc1">MFC1</a></li>
+        <li class="nav-item"><a class="nav-link" href="/mfc2/">MFC2</a></li>
+        <li class="nav-item"><a class="nav-link" href='/mfc4/'>MFC4</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Description Section -->
+<section class="description">
+  <h2>Shopfloor Area Overview</h2>
+  <p>
+    The shopfloor area is the core of our operations where machines, 
+    tools, and workers come together to ensure smooth production. 
+    It provides a real-time view of manufacturing activities, 
+    ensuring quality, efficiency, and safety at every step.
+  </p>
+  <p>
+    This section helps employees stay informed about processes, 
+    layout, and key resources available within the shopfloor.
+  </p>
+</section>
+
+
+  <img src="{% static 'bosch_intro/images/map.png' %}" alt="Sample" class="big-image">
+  <img src="{% static 'bosch_intro/im'}"
+
+
+   <!-- Bootstrap JS  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

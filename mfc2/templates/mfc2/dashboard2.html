@@ -1,0 +1,753 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .dashboard-card {
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: scale(1.03);
+        }
+
+        #noResults {
+            display: none;
+            font-size: 1.1rem;
+            color: #6c757d;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* html,
+        body {
+            height: 100%;
+        } */
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Push footer to bottom */
+        footer {
+            margin-top: auto;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:#F3F7F8">
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold mx-auto" href="#">MFC4 Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center d-flex align-items-center justify-content-center"
+        style='background: url("{% static "bosch_intro/images/dash.jpeg" %}") center/cover no-repeat; height: 300px;'>
+
+        <div class="text-white bg-dark bg-opacity-50 p-3 rounded">
+            <h3 class="display-6 fw-bold">NaP MFC4 Dashboards</h3>
+            <p class="lead">A Web Page To Explore and Visualize Data From Various types of machines.</p>
+        </div>
+    </section>
+
+
+
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4 fw-bold">Dashboard Overview</h2>
+
+        <!-- 🔍 Search bar -->
+        <div class="d-flex justify-content-center mb-4">
+            <input id="searchInput" type="text" class="form-control w-50" placeholder="Search dashboard...">
+        </div>
+
+        <!-- “No Results” message -->
+        <div id="noResults">No dashboards found matching your search.</div>
+
+        <!-- Grid -->
+        <div class="row g-4" id="dashboardGrid">
+
+            <!-- Card 1 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Valveset Combas</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/f0e3cbea-fa62-4539-8305-62e9da0bab6d/ReportSection53c2c8dc1f0cd4fbd0ee?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 2-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard2.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">cycle time KPI </h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/c7fee34e-2472-4e94-9cee-795aa6f25878/ReportSection04a12a8f76820b5a1c61?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard3.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Schutte</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/d8ca5a35-b4e6-4b60-8c0a-09ab5f90a774/ReportSection011824b5e8b371dc4b40?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 4-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard4.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">non opcon production qty visual</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/64a1611e-1cfc-4428-b74b-775e5aaa599c/ReportSection2db3744e78e939010e37?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard6.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">powercost MFC4</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/70827205-79bd-4c31-8726-cba5b638eae3/ReportSectionfa9bc61749d403236b60?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 6 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard7.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">tool life monitoring MFC4</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/b7a9e7d6-de29-4b45-90db-5ecb4caf6353/ReportSection1b0a113a7c22562c8c1d?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 7 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard8.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">line 7 runcharts</h5>
+                        <p></p>
+                        <a href=https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/c7ec5b4f-0414-4104-842c-e53dd26ac646/74de86dfe5c47f76b1a0?experience=power-bi""
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 8-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboar5.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">HE cycle time</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/422ec5c2-1a0d-48d9-a28e-3e8a66da046b/ReportSection607d850bf2e73c513b5e?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 9 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">HE losses</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/aa69dd5c-88bb-4e84-925b-1d8809fd44a0/ReportSection?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 10 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard10.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">HE 24-25 dashboard</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/aea6147b-842c-4a52-9ec6-832341aeb2a4/638ddad7180e455e352d?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 11 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">HE line scrap </h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/a35b4b27-37c2-4d80-be56-b9451b9cee3a/ReportSection?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 12 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard12.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">HE line7 hourly part count</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/b1576116-c38e-43a2-8914-eee632a7aea3/d40cd46af40433805fd1?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 13 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard13.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">FHMI tooling</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/9d1e55da-758d-478d-b258-287298a1fd37/ee2420722ef77c168010?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 14-->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard14.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">digital sqcd</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/4f2d3ece-a1ce-4f05-8e70-2fd4a1c58ceb/ReportSection109adc3e8c0c01950ace?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- card 18 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller 20431</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/links/vKjpvq5_tf?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&pbi_source=linkShare"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 19 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard19.jpg' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller 20432</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/links/7iM4MMUaRQ?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&pbi_source=linkShare"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 20 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard20.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller 20433</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/links/wsX1qPQTTr?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&pbi_source=linkShare"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 21 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahuller 20514</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/me/reports/aee75b3a-2739-49ad-aa5d-df40d2d7acd0/ReportSection53c2c8dc1f0cd4fbd0ee?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 22 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller 20527</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/me/reports/aee75b3a-2739-49ad-aa5d-df40d2d7acd0/ReportSection53c2c8dc1f0cd4fbd0ee?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 23 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller_20536</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/me/reports/aee75b3a-2739-49ad-aa5d-df40d2d7acd0/ReportSection53c2c8dc1f0cd4fbd0ee?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 24 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller_59618</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/me/reports/aee75b3a-2739-49ad-aa5d-df40d2d7acd0/ReportSection53c2c8dc1f0cd4fbd0ee?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 25 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller_61031</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/me/reports/aee75b3a-2739-49ad-aa5d-df40d2d7acd0/ReportSection53c2c8dc1f0cd4fbd0ee?ctid=0ae51e19-07c8-4e4b-bb6d-648ee58410f4&experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 26 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bahmuller_62121</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/3c2fdaac-dc55-4a36-a5f9-2e266f6e44eb?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 27 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tool life monitoring MFC4</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/6837a66d-e287-4b51-b5b2-42daf05b93f4?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 28 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ghiringhelli_20456</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/5339a5c1-d575-48da-842a-c91b9e8747e1?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 29 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ghiringhelli_62120</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/c54d45d3-d990-4e5b-973e-9d81e4de4c47?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Da shboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- card 30 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Schutte_20440</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/65e36098-1aca-484b-8c4c-53b375db73e7?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- card 31 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Schutte_20597</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/13634521-d700-4a1b-affc-6db847c873bd/ReportSection?experience=power-bi"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- card 32 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Silberhorn_36343</h5>
+                        <p></p>
+                        <a href="https://aphttps://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/cc1d9a15-edb0-4924-be57-89f1deeaee5e?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- card 33 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Voumard_20444</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/13634521-d700-4a1b-affc-6db847c873bd?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- card 34 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Voumard_20544</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/5220b906-620c-404d-bd84-f2c836508af9?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- card 35 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Voumard_20546</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/20051886-729b-4c51-b4e7-57236f772e40?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- card 36 -->
+            <div class="col-md-4 d-flex justify-content-center dashboard-card">
+                <div class="card shadow" style="width: 25rem; border-radius: 10px;">
+                    <!-- Dashboard Image -->
+                    <img src="{% static 'bosch_intro/dashboard_images/dashboard1.png' %}" class="card-img-top"
+                        alt="Dashboard Thumbnail"
+                        style="height: 220px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                    <!-- Card Body -->
+                    <div class="card-body text-center">
+                        <h5 class="card-title">VomardP</h5>
+                        <p></p>
+                        <a href="https://app.powerbi.com/groups/1cdfd5e0-35cb-42ab-b1fb-1368cb05fb23/reports/3eaf4d32-e2b5-46a9-8a56-40cd0eb1105e?experience=power-bi&subfolderId=31117"
+                            class="btn btn-primary">Go to Dashboard</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more cards below as needed -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p class="mb-0">© 2025 Bosch. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ✅ Search script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("searchInput");
+            const cards = document.querySelectorAll(".dashboard-card");
+            const noResults = document.getElementById("noResults");
+
+            searchInput.addEventListener("input", function () {
+                const filter = searchInput.value.toLowerCase().trim();
+                let anyVisible = false;
+
+                cards.forEach(card => {
+                    const title = card.querySelector(".card-title").textContent.toLowerCase();
+                    if (title.includes(filter)) {
+                        card.classList.remove("d-none");
+                        anyVisible = true;
+                    } else {
+                        card.classList.add("d-none");
+                    }
+                });
+
+                // Show/hide “No results” message
+                if (filter && !anyVisible) {
+                    noResults.style.display = "block";
+                } else {
+                    noResults.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+
+</html>
